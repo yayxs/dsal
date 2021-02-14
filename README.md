@@ -1,4 +1,8 @@
-> 歌曲推荐：《MOM-蜡笔小心-网易云》
+# 思维导图
+
+- [洋小洋同学/前端进阶/数据结构与算法](https://www.yuque.com/docs/share/53235683-20ca-4ed6-a910-6b0621ae4998?# 《算法与数据结构》)
+
+# 前言
 
 **数据结构和（与）算法** 是我们的原力。`《算法再好也算不懂你的心》系列文章` 在今天正式启动。
 
@@ -45,6 +49,8 @@
 `大O表示法`
 
 ![](https://gitee.com/webfrontup/javascript-algorithms/raw/master/assets/big-o-graph.png)
+
+# 数组结构
 
 ## 数组
 
@@ -186,9 +192,12 @@ for (let i = 0, len = 4; i < len; i++) {
 - clear()：移除栈里的所有元素。
 - size()：返回栈里的元素个数。这个方法和数组的 length 属性很类似。
 
-### 栈的封装
+## 栈的封装
+
+### 基于`ES5` 的栈实现
 
 ```js
+// es5 版本
 function Stack() {
   this.arr = [];
   Stack.prototype.push = function (ele) {
@@ -210,6 +219,39 @@ function Stack() {
     }
     return str;
   };
+}
+```
+
+### 基于数组的栈
+
+```js
+// es6 版本
+class StackArray {
+  constructor() {
+    this.items = [];
+  }
+  // 栈顶增加元素
+  push(ele) {
+    this.items.push(ele);
+  }
+  // 栈顶弹出元素
+  pop() {
+    return this.items.pop();
+  }
+  // 返回栈里的元素个数
+  size() {
+    return this.items.length;
+  }
+  // 移除栈里的所有元素
+  clear() {
+    this.items.length = 0;
+  }
+  isEmpty() {
+    return this.items.length === 0;
+  }
+  peek() {
+    return this.items[this.items.length - 1];
+  }
 }
 ```
 
