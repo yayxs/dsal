@@ -53,35 +53,35 @@
 - 创建一个数组
 
 ```js
-const arr = new Array();
+const arr = new Array()
 
-let res = new Array(100000).fill(10);
-console.log(res);
-var arr = new Array(100000).fill(100);
-console.time("timer");
-arr[0];
-console.timeEnd("timeEnd");
-console.time("timer");
-arr[100000 - 1];
-console.timeEnd("timeEnd");
+let res = new Array(100000).fill(10)
+console.log(res)
+var arr = new Array(100000).fill(100)
+console.time('timer')
+arr[0]
+console.timeEnd('timeEnd')
+console.time('timer')
+arr[100000 - 1]
+console.timeEnd('timeEnd')
 ```
 
 - 创建一个每个匀速固定的值
 
 ```js
-const arr = new Array(11).fill(1);
-console.log(arr);
+const arr = new Array(11).fill(1)
+console.log(arr)
 ```
 
 - 初始化二维数组
 
   ```js
-  let arr = [];
-  const len = 5;
+  let arr = []
+  const len = 5
   for (let i = 0; i < len; i++) {
-    arr[i] = [];
+    arr[i] = []
   }
-  console.log(arr);
+  console.log(arr)
   ```
 
 有两种数据结构类似于数组,但在添加和删除元素时更为可控。它们就是栈和队列
@@ -89,21 +89,21 @@ console.log(arr);
 - 二维数组的访问
 
 ```js
-const arr = new Array(10);
-console.log(arr);
-const len = arr.length;
+const arr = new Array(10)
+console.log(arr)
+const len = arr.length
 for (let i = 0; i < len; i++) {
-  arr[i] = [];
+  arr[i] = []
 }
 
-const outerLen = arr.length;
-console.log(outerLen); // 10
+const outerLen = arr.length
+console.log(outerLen) // 10
 for (let i = 0; i < outerLen; i++) {
   // 内部长度
-  const innerLen = arr[i].length;
-  console.log(innerLen);
+  const innerLen = arr[i].length
+  console.log(innerLen)
   for (let j = 0; j < innerLen; j++) {
-    console.log(arr[i][j]);
+    console.log(arr[i][j])
   }
 }
 ```
@@ -120,12 +120,12 @@ for (let i = 0; i < outerLen; i++) {
  */
 for (let i = 0; i < 3; i++) {
   for (j = 0; j < 4; j++) {
-    document.write("*");
+    document.write('*')
   }
-  document.write(`<br />`);
+  document.write(`<br />`)
 }
 
-document.write(`<hr />`);
+document.write(`<hr />`)
 
 /**
  *  *    0 1
@@ -136,21 +136,21 @@ document.write(`<hr />`);
 
 for (let i = 0, len = 4; i < len; i++) {
   for (let j = 0, len = i + 1; j < len; j++) {
-    document.write("*");
+    document.write('*')
   }
-  document.write(`<br />`);
+  document.write(`<br />`)
 }
 
-document.write(`<hr />`);
+document.write(`<hr />`)
 
 for (let i = 0, len = 4; i < len; i++) {
   for (let j = 0; j <= i; j++) {
-    document.write("*");
+    document.write('*')
   }
-  document.write(`<br />`);
+  document.write(`<br />`)
 }
 
-document.write(`<hr />`);
+document.write(`<hr />`)
 
 /**
  *  **** 0 4
@@ -161,9 +161,9 @@ document.write(`<hr />`);
 
 for (let i = 0, len = 4; i < len; i++) {
   for (let j = 0, len = 4 - i; j < len; j++) {
-    document.write("*");
+    document.write('*')
   }
-  document.write(`<br />`);
+  document.write(`<br />`)
 }
 
 /**
@@ -195,26 +195,26 @@ for (let i = 0, len = 4; i < len; i++) {
 ```js
 // es5 版本
 function Stack() {
-  this.arr = [];
+  this.arr = []
   Stack.prototype.push = function (ele) {
-    this.arr.push(ele);
-  };
+    this.arr.push(ele)
+  }
   Stack.prototype.pop = function () {
-    return this.arr.pop();
-  };
+    return this.arr.pop()
+  }
   Stack.prototype.peek = function () {
-    return this.arr[this.arr.length - 1];
-  };
+    return this.arr[this.arr.length - 1]
+  }
   Stack.prototype.size = function () {
-    return this.arr.length;
-  };
+    return this.arr.length
+  }
   Stack.prototype.toString = function () {
-    let str = "";
+    let str = ''
     for (let i = 0; i < this.arr.length; i++) {
-      str += this.arr[i] + " ";
+      str += this.arr[i] + ' '
     }
-    return str;
-  };
+    return str
+  }
 }
 ```
 
@@ -224,29 +224,29 @@ function Stack() {
 // es6 版本
 class StackArray {
   constructor() {
-    this.items = [];
+    this.items = []
   }
   // 栈顶增加元素
   push(ele) {
-    this.items.push(ele);
+    this.items.push(ele)
   }
   // 栈顶弹出元素
   pop() {
-    return this.items.pop();
+    return this.items.pop()
   }
   // 返回栈里的元素个数
   size() {
-    return this.items.length;
+    return this.items.length
   }
   // 移除栈里的所有元素
   clear() {
-    this.items.length = 0;
+    this.items.length = 0
   }
   isEmpty() {
-    return this.items.length === 0;
+    return this.items.length === 0
   }
   peek() {
-    return this.items[this.items.length - 1];
+    return this.items[this.items.length - 1]
   }
 }
 ```
@@ -311,3 +311,41 @@ class StackArray {
 | ------------ | -------- | -------------------- | --------------------------------------------------------------- |
 | 深度优先搜索 | 栈       | Depth-First Search   | 通过将顶点存入栈中，顶点是沿着路径被探索,存在新的相邻的顶点访问 |
 | 广度优先搜索 | 队列     | Breadth-First Search | 通过将顶点存入队列中 最先入队列的顶点先被探索                   |
+
+# 复杂度
+
+循环遍历 n 维数组只需要重点关注最内层循环的次数,一维数组是`O(n)`
+
+```js
+// T(n) =1 + 1+ (n+1)+n +n = 3n+3
+function trs(arr) {
+  let len = arr.length // 执行1次
+  // let i = 0 // 执行1次 初始化语句
+  // i<len 判断语句比递增语句多执行1次 n+1
+  // i++ 执行n次
+
+  for (let i = 0; i < len; i++) {
+    console.log(arr[i]) // 循环体n次
+  }
+}
+```
+
+二维数组是 O(n^2)
+
+```js
+function traverse(arr) {
+  let outLen = arr.length // 1
+  // 1
+  // n+1
+  // n
+  for (let i = 0; i < outLen; i++) {
+    let inLen = arr[i].length // n
+    // n
+    // n*(n+1)
+    // n*n
+    for (let j = 0; j < inLen; j++) {
+      console.log(arr[i][j]) // n^2 // 关心内层循环执行的次数
+    }
+  }
+}
+```
