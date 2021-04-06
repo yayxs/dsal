@@ -1,3 +1,7 @@
+/**
+ * arr len i
+ * @param {*} arr
+ */
 function oneDimensionalArray(arr) {
   let len = arr.length
   for (let i = 0; i < len; i++) {
@@ -11,5 +15,16 @@ function twoDimensionalArray(arr) {
     for (let j = 0; j < inLen; j++) {
       console.log(arr[i][j])
     }
+  }
+}
+
+/**
+ * n arr i
+ * @param {*} n
+ */
+function init(n) {
+  var arr = []
+  for (let i = 0; i < n; i++) {
+    arr[i] = i
   }
 }
