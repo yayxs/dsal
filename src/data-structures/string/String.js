@@ -68,3 +68,23 @@ class BaseStr {
 
   end(str, length) {}
 }
+
+// 区分大小写
+console.log('Test_str'.includes('Test'));
+console.log('Test_str'.indexOf('12')); // -1 没有找到
+
+// match
+const str = 'tEst';
+console.log(str.match(/[A-Z]/g));
+console.log(str.match());
+
+// String.prototype.repeat()
+
+const str = '123';
+// console.log(str.repeat(0));
+// console.log(str.repeat(1));
+console.log(str.repeat(2));
+
+// String.prototype.replace()
+
+let str = 'origin';
