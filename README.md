@@ -2,20 +2,34 @@
 
 > Data structure and algorithm implementation on JavaScript
 
+Before starting, the most important thing is to build the system ,you can
+
 _Read this in other languages:_
-[_简体中文_](README.zh-CN.md),
+[_简体中文_](README.zh-CN.md), provide `chinese simp` and `english` now
+
+## Pre-knowledge
+
+- [book-list](./docs/book-list.md) you can read this books
 
 ## Data Structures
 
+- ing
+
 ## Algorithms
+
+- ing
 
 ## Leetcode
 
-### Data Structure Operations Complexity
-
-| #         | Title | JavaScript | TypeScript |
-| --------- | :---: | :--------: | :--------: |
-| **Array** |       |            |            |
+| #   |             Title              | ds(data-structures) | type keys | JavaScript | TypeScript |
+| --- | :----------------------------: | :-----------------: | :-------: | :--------: | :--------: |
+| 1   |           1. Two Sum           |                     | array Sum |            |            |
+| 13  |      13. Roman to Integer      |                     |           |            |            |
+| 15  |            15. 3Sum            |                     |           |            |            |
+| 20  |     20. Valid Parentheses      |                     |           |            |            |
+| 28  |     28. Implement strStr()     |                     |           |            |            |
+| 88  |     88. Merge Sorted Array     |                     |           |            |            |
+| 151 | 151. Reverse Words in a String |                     |           |            |            |
 
 ## Other
 
