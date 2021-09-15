@@ -1,14 +1,18 @@
-let str = `vasttsav`
-
-function isHWStr(str) {
-  const len = str.length
-  for (let i = 0; i < len / 2; i++) {
-    if (str[i] !== str[len - i - 1]) {
-      return false
+function isPalindrome(s) {
+  if (typeof s !== 'string') return false;
+  let left = 0,
+    right = s.length - 1;
+  while (left < right) {
+    if (s.charAt(left) !== s.charAt(right)) {
+      return false;
     }
+    ++left;
+    --right;
   }
-
-  return true
+  return true;
 }
 
-console.log(isHWStr(str))
+let s1 = 'abcba',
+  s2 = '123';
+console.log(isPalindrome(s1));
+console.log(isPalindrome(s2));

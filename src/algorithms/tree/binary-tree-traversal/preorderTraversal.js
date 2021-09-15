@@ -57,3 +57,12 @@ function preorderTraversal(node) {
 }
 
 preorderTraversal(root);
+
+/**
+ *              1(1)
+ *    2(3)                3(2)
+ *
+ *  4(5)        5(4)           6(9)        7(8)
+ *
+ * 8(7)    9(6)
+ */

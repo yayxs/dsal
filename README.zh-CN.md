@@ -13,9 +13,9 @@ _Read this in other languages:_
 
 ### Data Structure Operations Complexity
 
-| #         | Title | JavaScript | TypeScript |
-| --------- | :---: | :--------: | :--------: |
-| **Array** |       |            |            |
+| #   |     Title      | JavaScript | TypeScript |
+| --- | :------------: | :--------: | :--------: |
+| 20  | 20. 有效的括号 |            |            |
 
 ## Other
 
