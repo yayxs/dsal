@@ -1,11 +1,11 @@
 # JavaScript Algorithms and Data Structures
 
-> Data structure and algorithm implementation on JavaScript
+> 数据结构与算法`JavaScript` 实现
 
-Before starting, the most important thing is to build the system ,you can
+在开始之前有一些重要的事情，比如你可以切换其他的语言
 
-_Read this in other languages:_
-[_简体中文_](README.zh-CN.md), provide `chinese simp` and `english` now
+_读其他语言版本:_
+[_英文_](README.md), 目前近支持`简体中文`与`英文`
 
 ## Pre-knowledge
 

@@ -90,6 +90,8 @@ let str = 'slice';
 console.log(str.slice(0, 2));
 console.log(str);
 
+const str = 'a str slice';
+
 /**
  * substring not change origin [ 0,2 )
  */

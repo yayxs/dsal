@@ -8,7 +8,9 @@ export default class Sort {
   static initSortingCallbacks(originCallbacks) {
     const callbacks = originCallbacks || {};
 
-    const stubCallback = () => {};
+    const stubCallback = (val) => {
+      // console.log(val);
+    };
 
     callbacks.compCb = callbacks.compCb || undefined;
     callbacks.visitCb = callbacks.visitCb || stubCallback;
