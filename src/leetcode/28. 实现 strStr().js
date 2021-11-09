@@ -1,37 +1,42 @@
-/**
- *
- * indexOf
- * find needle location in haystack
- * if not exist return -1
- * if '' return 0
- *
- * @param {string} haystack
- * @param {string} needle
- * @returns {number}
+/*
+ * @Author: vast or yayxs
+ * @Date: 2021-09-15 16:04:54
+ * @Description:
  */
-function strStr(haystack, needle) {
-  // console.log(haystack.indexOf(needle));
-  if (typeof haystack === 'string' && typeof needle === 'string') {
-    const haystackLength = haystack.length,
-      needleLength = needle.length;
-    if (needleLength === 0) {
-      return 0;
-    }
-    ('h e l l o');
-    let pHaystack = 0;
-    // while(  pHaystack < )
+/**
+ * 字符串
+ * BF 算法 Brute Force
+ * 手动实现 indexOf
+ *
+ * @param {*} haystack
+ * @param {*} needle
+ * @returns
+ */
+var strStr = function (haystack, needle) {
+  let haystackLen = haystack.length;
+  let needleLen = needle.length;
+  let LengthDiffer = haystackLen - needleLen;
+  // 主串长度 < 模式串
+  if (haystackLen < needleLen) {
+    return -1;
   }
-}
+  // 模式串为空
+  if (needleLen === 0) {
+    return 0;
+  }
+  // Loop 主串 发起点
+  for (let i = 0; i < LengthDiffer; i++) {
+    // 主串的first
+    let j;
+    for (j = 0; j < needleLen; j++) {
+      // 子串首位
+      let subFirst = needle[j];
+      // 主串首位
+      // let mainFirst =
+    }
+  }
 
-let s1 = 'hello';
-let s2 = 'll';
+  return -1;
+};
 
-let s3 = '';
-let s4 = '';
-
-let s5 = 'aaaaa';
-let s6 = 'bba';
-
-strStr(s1, s2);
-strStr(s5, s6);
-strStr(s3, s4);
+console.log(strStr('hello', 'll'));
