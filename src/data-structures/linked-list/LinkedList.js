@@ -16,12 +16,12 @@ export default class LinkedList {
   }
   /**
    * 链表添加头结点
-   * @param {*} value 新节点的值
+   * @param {*} val 新节点的值
    * @returns { LinkedList } 当前链表
    */
-  prepend(value) {
+  prepend(val) {
     // 将新节点添加至头部 next->head
-    const newNode = new LinkedListNode(value, this.head);
+    const newNode = new LinkedListNode(val, this.head);
     // 头部变为新节点
     this.head = newNode;
     // 如果没有尾部 新节点设置为尾结点
@@ -32,12 +32,12 @@ export default class LinkedList {
   }
   /**
    * 链表添加尾部节点
-   * @param {*} value
+   * @param {*} val
    * @returns {LinkedList}
    */
-  append(value) {
+  append(val) {
     // 构造node节点
-    const newNode = new LinkedListNode(value);
+    const newNode = new LinkedListNode(val);
     // 没有头部
     if (!this.head) {
       this.head = newNode;
@@ -89,11 +89,11 @@ export default class LinkedList {
   /**
    * 链表的查找
    * @param {Object} findParams
-   * @param {*}  findParams.value
+   * @param {*}  findParams.val
    * @param {function}  [findParams.callback]
    * @returns {LinkedListNode}
    */
-  find({ value = undefined, callback = undefined }) {
+  find({ val = undefined, callback = undefined }) {
     // 必须有头节点
     if (!this.head) {
       return null;
@@ -103,11 +103,11 @@ export default class LinkedList {
 
     while (currentNode) {
       // 如果指定回调 && 通过回调查找节点
-      if (callback && callback(currentNode.value)) {
+      if (callback && callback(currentNode.val)) {
         return currentNode;
       }
       // 如果指定了值 && 按照值进行比较
-      if (value !== undefined && this.compare.equal(currentNode.value, value)) {
+      if (val !== undefined && this.compare.equal(currentNode.val, val)) {
         return currentNode;
       }
       currentNode = currentNode.next;
@@ -179,12 +179,27 @@ export default class LinkedList {
     return this;
   }
   /**
+   * 通过 head 反转链表
+   * @returns
+   */
+  reverseByHead() {
+    let prev = null;
+    let curr = this.head;
+    while (curr) {
+      let next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    return prev;
+  }
+  /**
    * 删除相同的元素(链表去重)
    */
   deleteDuplicates() {
     let currNode = this.head;
     while (currNode && currNode.next) {
-      if (currNode.value === currNode.next.value) {
+      if (currNode.val === currNode.next.val) {
         currNode.next = currNode.next.next;
       } else {
         currNode = currNode.next;
@@ -192,11 +207,43 @@ export default class LinkedList {
     }
     return this.head;
   }
+  /**
+   * 根据头节点判断是是否是回文链表
+   */
+  isPalindrome() {
+    // 一个节点 直接返回true
+    if (this.head === null || this.head.next === null) {
+      return true;
+    }
+    // 快慢指针指向头结点
+    let fast = this.head;
+    let slow = this.head;
+
+    while (fast.next && fast.next.next) {
+      // 慢指针走一步
+      slow = slow.next;
+      // 快指针走两步
+      fast = fast.next.next;
+    }
+    // 反转
+    slow = this.reverse(slow.next);
+    while (slow) {
+      if (this.head.val !== slow.val) {
+        return false;
+      }
+      this.head = this.head.next;
+      slow = slow.next;
+    }
+    return true;
+  }
 }
 
 const list1 = new LinkedList();
 list1.append(1);
-list1.append(1);
 list1.append(2);
-list1.append(4);
-console.log(list1);
+list1.append(2);
+list1.append(1);
+// list1.append(3);
+
+// console.log(list1);
+console.log(list1.isPalindrome());

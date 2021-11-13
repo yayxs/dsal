@@ -1,11 +1,11 @@
 export default class LinkedListNode {
   /**
    * 构造node节点
-   * @param {*} value
+   * @param {*} val leetcode 节点值 val
    * @param {*} next
    */
-  constructor(value, next = null) {
-    this.value = value;
+  constructor(val, next = null) {
+    this.val = val;
     this.next = next;
   }
   /**
@@ -14,6 +14,6 @@ export default class LinkedListNode {
    * @returns
    */
   toString(callback) {
-    return callback ? callback(this.value) : `${this.value}`;
+    return callback ? callback(this.val) : `${this.val}`;
   }
 }
